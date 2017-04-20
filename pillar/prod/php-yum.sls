@@ -1,0 +1,1 @@
+PHP_YUM_VERSION: 55w

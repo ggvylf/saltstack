@@ -1,0 +1,5 @@
+TOMCAT_VERSION: 7.0.77
+TOMCAT_DIRNAME: apache-tomcat-7.0.77
+TOMCAT_INSPATH: /data
+
+
