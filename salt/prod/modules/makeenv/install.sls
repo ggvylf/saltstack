@@ -14,4 +14,5 @@ makeenv-install:
       - libxslt
       - libxslt-devel
       - autoconf
+      - libtool
       
