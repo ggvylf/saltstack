@@ -75,6 +75,9 @@ php-comp-sevscript-cpfile:
     - user: root
     - group: root
     - mode: 0755
+    - template: jinja
+    - default:
+      PHPINSDIR: {{ pillar['PHP_COMP_INSPATH'] }}/{{ pillar['PHP_COMP_DIRNAME'] }}
     - unless:
       - test -f /etc/init.d/php-fpm
 

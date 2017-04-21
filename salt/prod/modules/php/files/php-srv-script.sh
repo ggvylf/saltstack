@@ -10,7 +10,7 @@
 # Description:       starts the PHP FastCGI Process Manager daemon
 ### END INIT INFO
  
-prefix=/data/php
+prefix={{ PHPINSDIR }}
 exec_prefix=${prefix}
  
 php_fpm_BIN=${exec_prefix}/sbin/php-fpm
