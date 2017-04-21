@@ -2,6 +2,8 @@ makeenv-install:
   pkg.installed:
     - pkgs:
       - gcc
+      - gcc-c++
+      - ncurses-devel
       - glibc
       - glibc-devel
       - make
@@ -15,4 +17,17 @@ makeenv-install:
       - libxslt-devel
       - autoconf
       - libtool
+      - bison
+      - bison-devel
+      - re2c
+      - perl
+      - perl-libs
+      - gd
+      - gd-devel
+      - curl
+      - libevent
+      - libevent-devel
+      - icu
+      - libicu
+      - libicu-devel
       

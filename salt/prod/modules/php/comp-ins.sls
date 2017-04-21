@@ -4,6 +4,13 @@ include:
 php-comp-pkg-install:
   pkg.installed:
     - pkgs:
+      - openjpeg
+      - openjpeg-devel
+      - mcrypt
+      - php-mcrypt
+      - libmcrypt
+      - libmcrypt-devel
+      - mariadb-devel
       - libjpeg-turbo
       - libjpeg-turbo-devel
       - libmemcached
@@ -15,8 +22,6 @@ php-comp-pkg-install:
       - libxml2
       - libxml2-devel
       - zlib-devel
-      - gd
-      - gd-devel
       - ImageMagick
       - ImageMagick-devel
       - uw-imap-devel
