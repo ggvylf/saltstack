@@ -19,4 +19,6 @@ php-ext-conf:
       - extension=memcached.so
       - '[phalcon]'
       - extension=phalcon.so
+      - '[redis]'
+      - extension=redis.so
 
