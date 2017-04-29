@@ -4,6 +4,6 @@ include:
  - modules.php.comp-ext-ins
 
 
-php-comp-service:
-  cmd.run:
-    - name: /etc/init.d/php-fpm start
+#php-comp-service:
+#  cmd.run:
+#    - name: /etc/init.d/php-fpm start

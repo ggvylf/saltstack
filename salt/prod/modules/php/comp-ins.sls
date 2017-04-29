@@ -25,6 +25,9 @@ php-comp-pkg-install:
       - ImageMagick
       - ImageMagick-devel
       - uw-imap-devel
+      - icu
+      - libicu
+      - libicu-devel
     - require:
       - pkg: makeenv-install
 
@@ -54,7 +57,8 @@ php-comp-mkdir:
 
 php-comp-install:
   cmd.run:
-    - name:  cd /usr/local/src/php-{{ pillar['PHP_COMP_VERSION'] }} &&  ./configure --prefix={{ pillar['PHP_COMP_INSPATH'] }}/{{ pillar['PHP_COMP_DIRNAME'] }} --with-config-file-path={{ pillar['PHP_COMP_INSPATH'] }}/{{ pillar['PHP_COMP_DIRNAME'] }}/etc --with-config-file-scan-dir={{ pillar['PHP_COMP_INSPATH'] }}/{{ pillar['PHP_COMP_DIRNAME'] }}/etc --with-pcre-regex  --with-curl  --with-freetype-dir  --with-gd  --with-gettext  --with-iconv-dir  --with-kerberos  --with-libdir=lib64  --with-libxml-dir   --with-openssl --with-pcre-regex  --with-pdo-mysql  --with-pdo-sqlite  --with-pear  --with-png-dir --with-jpeg-dir  --with-xmlrpc  --with-xsl  --with-zlib   --with-imap --with-imap-ssl --enable-fpm  --enable-mysqlnd   --enable-exif --enable-ftp --enable-zip  --enable-bcmath  --enable-libxml  --enable-inline-optimization  --enable-gd-native-ttf  --enable-mbregex  --enable-mbstring  --enable-pcntl  --enable-shmop  --enable-soap  --enable-sockets  --enable-sysvsem  --enable-xml --enable-opcache && make && make install && touch {{ pillar['PHP_COMP_INSPATH'] }}/{{ pillar['PHP_COMP_DIRNAME'] }}/installed.lock
+#    - name:  cd /usr/local/src/php-{{ pillar['PHP_COMP_VERSION'] }} &&  ./configure --prefix={{ pillar['PHP_COMP_INSPATH'] }}/{{ pillar['PHP_COMP_DIRNAME'] }} --with-config-file-path={{ pillar['PHP_COMP_INSPATH'] }}/{{ pillar['PHP_COMP_DIRNAME'] }}/etc --with-config-file-scan-dir={{ pillar['PHP_COMP_INSPATH'] }}/{{ pillar['PHP_COMP_DIRNAME'] }}/etc --with-pcre-regex  --with-curl  --with-freetype-dir  --with-gd  --with-gettext  --with-iconv-dir  --with-kerberos  --with-libdir=lib64  --with-libxml-dir   --with-openssl --with-pcre-regex  --with-pdo-mysql  --with-pdo-sqlite  --with-pear  --with-png-dir --with-jpeg-dir  --with-xmlrpc  --with-xsl  --with-zlib   --with-imap --with-imap-ssl --enable-fpm  --enable-mysqlnd   --enable-exif --enable-ftp --enable-zip  --enable-bcmath  --enable-libxml  --enable-inline-optimization  --enable-gd-native-ttf  --enable-mbregex  --enable-mbstring  --enable-pcntl  --enable-shmop  --enable-soap  --enable-sockets  --enable-sysvsem  --enable-xml --enable-opcache && make && make install && touch {{ pillar['PHP_COMP_INSPATH'] }}/{{ pillar['PHP_COMP_DIRNAME'] }}/installed.lock
+    - name:  cd /usr/local/src/php-{{ pillar['PHP_COMP_VERSION'] }} &&  ./configure --prefix={{ pillar['PHP_COMP_INSPATH'] }}/{{ pillar['PHP_COMP_DIRNAME'] }} --with-config-file-path={{ pillar['PHP_COMP_INSPATH'] }}/{{ pillar['PHP_COMP_DIRNAME'] }}/etc --with-config-file-scan-dir={{ pillar['PHP_COMP_INSPATH'] }}/{{ pillar['PHP_COMP_DIRNAME'] }}/etc --with-mcrypt=/usr/include --enable-mysqlnd --with-gd --with-iconv-dir --with-curl --with-zlib --enable-bcmath --enable-shmop --enable-sysvsem --enable-inline-optimization --enable-mbregex --enable-fpm --enable-exif --enable-intl --enable-mbstring --enable-ftp --enable-gd-native-ttf --with-openssl --enable-pcntl --enable-sockets --with-xmlrpc --enable-zip --enable-soap --with-gettext --with-curl --with-jpeg-dir --with-freetype-dir --with-mysqli --with-xsl --enable-embedded-mysqli --with-pdo-mysql  && make && make install && touch {{ pillar['PHP_COMP_INSPATH'] }}/{{ pillar['PHP_COMP_DIRNAME'] }}/installed.lock
     - unless:
       - test -f {{ pillar['PHP_COMP_INSPATH'] }}/{{ pillar['PHP_COMP_DIRNAME'] }}/installed.lock
     - require:
