@@ -1,7 +1,7 @@
 {% set USERNAME = 'www' %}
 {% set GROUPNAME = 'www' %}
-{% set UID = '888' %}
-{% set GID = '888' %}
+{% set UID = '1000' %}
+{% set GID = '1000' %}
 {% set PASSWORD = '$1$gEMONXHO$aBc0OVgDqCoyyK8ALmI160' %}
 {% set USERNAME = 'www' %}
 
@@ -22,7 +22,7 @@ user-{{ USERNAME }}-add:
     - shell: /sbin/nologin
     - home: /home/{{ USERNAME  }}
     - createhome: False
-    - password: {{ PASSWORD }}
+#    - password: {{ PASSWORD }}
     - require:
       - group: user-{{ USERNAME  }}-add 
     - unless:
