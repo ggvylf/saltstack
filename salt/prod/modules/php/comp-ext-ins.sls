@@ -22,3 +22,11 @@ php-ext-conf:
       - '[redis]'
       - extension=redis.so
 
+php-composer-copy:
+  file.managed:
+    - name: /usr/local/bin/composer
+    - source: salt://modules/php/files/ext/composer
+    - user: root
+    - group: root
+    - mode: 0755
+

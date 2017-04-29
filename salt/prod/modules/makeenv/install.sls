@@ -11,6 +11,10 @@ makeenv-install:
       - openssl-devel
       - pcre
       - pcre-devel
+      - apr
+      - apr-devel
+      - apr-util
+      - apr-util-devel
       - libcurl-devel
       - libcurl
       - libxslt
@@ -30,4 +34,6 @@ makeenv-install:
       - icu
       - libicu
       - libicu-devel
+      - libevent
+      - libevent-devel
       
