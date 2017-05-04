@@ -1,5 +1,6 @@
 include:
   - modules.makeenv.install
+  - modules.users.www
 
 php-comp-pkg-install:
   pkg.installed:
