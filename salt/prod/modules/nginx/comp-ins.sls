@@ -41,6 +41,30 @@ nginx-comp-mkdir:
   cmd.run:
     - name: mkdir -p {{ pillar['NGINX_COMP_INSPATH'] }}
 
+nginx-comp-mkdir-wwwroot:
+  file.directory:
+    - name: {{ pillar['NGINX_COMP_INSPATH'] }}/wwwroot
+    - user: www
+    - group: www
+    - dir_mode: 755
+    - file_mode: 644
+    - rescuse:
+      - user
+      - group
+      - mode
+
+nginx-comp-mkdir-wwwlogs:
+  file.directory:
+    - name: {{ pillar['NGINX_COMP_INSPATH'] }}/wwwlogs
+    - user: www
+    - group: www
+    - dir_mode: 755
+    - file_mode: 644
+    - rescuse:
+      - user
+      - group
+      - mode
+  
 
 nginx-comp-install:
   cmd.run:
