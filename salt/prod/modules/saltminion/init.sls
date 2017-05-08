@@ -9,15 +9,26 @@ salt-minion-install:
      - file: saltstach-repo-copyfile
 
 salt-minion-add-host:
-  cmd.run:
-    - name: echo {{ grains['fqdn_ip4'] }}  {{ grains['fqdn'] }} >> /etc/hosts
   file.append:
     - name: /etc/hosts
     - text:
-      - "{{ grains['fqdn_ip4'] }}  {{ grains['fqdn'] }}"
+      - {{ grains['ip4_interfaces']['eth0'][0]}}  {{ grains['fqdn'] }}
+
+salt-minion-cpconf:
+  file.managed:
+    - name: /etc/salt/minion
+    - source: salt://modules/saltminion/files/salt-minion.conf
+    - user: root
+    - group: root
+    - mode: 0640
+    - template: jinja
+    - defaults:
+      SALTMASTER: 192.168.56.11
+
 
 salt-minion-service:
   service.running:
     - name: salt-minion
     - enable: True
-    - reload: True
+    - watch:
+      - file: salt-minion-cpconf
