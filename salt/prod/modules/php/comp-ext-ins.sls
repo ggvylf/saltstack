@@ -21,6 +21,8 @@ php-ext-conf:
       - extension=phalcon.so
       - '[redis]'
       - extension=redis.so
+      - '[grpc]'
+      - extension=grpc.so
 
 php-composer-copy:
   file.managed:
