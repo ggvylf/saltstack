@@ -1,2 +1,0 @@
-export CATALINA_HOME={{ TOMCATDIR }}/tomcat
-export PATH=$CATALINA_HOME/bin:$PATH

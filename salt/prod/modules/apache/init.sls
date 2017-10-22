@@ -1,4 +1,0 @@
-include:
-  - yumins
-  - yumcpfile
-  - yumser
